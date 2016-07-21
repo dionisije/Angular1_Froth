@@ -8,16 +8,27 @@
  * Factory in the angular1FrothApp.
  */
 angular.module('angular1FrothApp')
-  .factory('albumFactory', function () {
+  .factory('albumFactory', function ($http, $q) {
     // Service logic
     // ...
 
-    var meaningOfLife = 42;
+    var _url = '/api/kc.json';
 
-    // Public API here
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      getData: function() {
+        var deferred = $q.defer();
+        $http({
+          method: 'GET',
+          responseType: 'json',
+//          url: 'https://itunes.apple.com/search?term='+'Kaiser Chiefs'+'&limit=2000'
+//          url: 'https://api.myjson.com/bins/vxc1'
+          url: _url
+        }).success(function(data){
+          deferred.resolve(data);
+        }).error(function(){
+          deferred.reject('There was an error')
+        });
+        return deferred.promise;
       }
     };
   });
