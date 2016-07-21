@@ -8,14 +8,15 @@
  * Controller of the angular1FrothApp
  */
 angular.module('angular1FrothApp')
-  .controller('DiscographyCtrl', function ($scope, albumFactory) {
+  .controller('DiscographyCtrl', function ($scope, $location, albumFactory) {
 
   	albumFactory.getData().then(function(data){
-  		console.dir(data);
   		$scope.albums = data;
   	});
 
   	$scope.somethingClicked = function(id){
-  		console.log(id + ' row clicked.'); 
+  		var path = '/discography/' + id;
+  		console.log('Path: ' + path); 
+  		$location.path(path);
   	};
   });

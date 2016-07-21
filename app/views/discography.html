@@ -1,6 +1,6 @@
 <h3>This is the Discography view.</h3>
 <div class="panel-body">
-	<table class="table ">
+	<table class="table table-hover">
 		<thead>
 			<tr>
 				<th>Album</th>
@@ -9,13 +9,10 @@
 			</tr>
 		</thead>
 		<tbody>
-<!-- 			<tr ng-repeat="item in albums" ng-click="somethingClicked(item.Catalogue)">
- -->			<tr ng-repeat="item in albums">
+ 			<tr ng-repeat="item in albums" ng-click="somethingClicked(item.Catalogue)">
 				<td>{{item.Album}}</td>
 				<td>{{item.Year}}</td>
-				<td>
-					<a href="#/discography/{{item.Catalogue}}">{{item.Catalogue}}</a>
-				</td>
+				<td>{{item.Catalogue}}</td>
 			</tr>
 		</tbody>
 	</table>
