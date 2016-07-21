@@ -89,6 +89,7 @@ module.exports = function (grunt) {
                 '/app/styles',
                 connect.static('./app/styles')
               ),
+              // Added this item to recognise the 'api' folder
               connect().use(
                 '/api',
                 connect.static('./api')
