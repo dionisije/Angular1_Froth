@@ -1,1 +1,19 @@
-<p>This is the Discography view.</p>
+<h3>This is the Discography view.</h3>
+<div class="panel-body">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Album</th>
+				<th>Year</th>
+				<th>Catalogue</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in albums" ng-click="somethingClicked()">
+				<td>{{item.Album}}</td>
+				<td>{{item.Year}}</td>
+				<td>{{item.Catalogue}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
