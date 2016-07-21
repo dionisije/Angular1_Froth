@@ -39,6 +39,11 @@ angular
         controller: 'DiscographyCtrl',
         controllerAs: 'Discography'
       })
+      .when('/discography/:albumId', {
+        templateUrl: 'views/detail.html',
+        controller: 'DetailCtrl',
+        controllerAs: 'Detail'
+      })
       .when('/factory', {
         templateUrl: 'views/factory.html',
         controller: 'FactoryCtrl',
