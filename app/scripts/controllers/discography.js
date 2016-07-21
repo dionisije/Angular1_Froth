@@ -30,7 +30,7 @@ angular.module('angular1FrothApp')
   	// 	return data;
   	// })
 
-  	$scope.somethingClicked = function(){
-  		console.log('Table row clicked.'); 
-  	}
+  	$scope.somethingClicked = function(id){
+  		console.log(id + ' row clicked.'); 
+  	};
   });
