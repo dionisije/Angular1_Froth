@@ -26,7 +26,7 @@ angular.module('angular1FrothApp')
         }).success(function(data){
           deferred.resolve(data);
         }).error(function(){
-          deferred.reject('There was an error')
+          deferred.reject('There was an error');
         });
         return deferred.promise;
       }
