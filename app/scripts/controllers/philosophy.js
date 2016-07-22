@@ -15,11 +15,11 @@ angular.module('angular1FrothApp')
       'Karma'
     ];
     
-    $scope.factoryData = {};
+    $scope.factoryData = 0;
     $scope.getAlbums = function() {
       albumFactory.getData().then(function(data){
         console.dir(data);
-        $scope.factoryData = data;
+        $scope.factoryData = data.length;
       });
     };
   });
