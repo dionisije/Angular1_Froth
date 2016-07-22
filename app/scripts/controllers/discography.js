@@ -16,7 +16,7 @@ angular.module('angular1FrothApp')
 
   	$scope.somethingClicked = function(id){
   		var path = '/discography/' + id;
-  		console.log('Path: ' + path); 
   		$location.path(path);
   	};
   });
+  

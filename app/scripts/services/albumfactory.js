@@ -29,6 +29,11 @@ angular.module('angular1FrothApp')
           deferred.reject('There was an error');
         });
         return deferred.promise;
+      },
+      getAlbum: function(id) {
+        return this.getData().then(function(data){
+          return data.find(function(albums){return albums.Catalogue===id;});
+        });
       }
     };
   });
