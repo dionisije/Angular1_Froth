@@ -1,4 +1,8 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// Custom theme (starting point)
+@import "slate-v3.3.6.scss";
+// Additional custom overrides
+@import "overrides.scss";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
