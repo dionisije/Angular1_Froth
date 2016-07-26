@@ -12,7 +12,8 @@ angular.module('angular1FrothApp')
     // Service logic
     // ...
 
-    var _url = 'http://frothmusic.co.uk/frothmusic/ws.php?set=all';
+    var _urlList = 'http://frothmusic.co.uk/frothmusic/ws.php?set=all';
+    var _urlTrax = 'http://frothmusic.co.uk/frothmusic/trax.php?id=';
 //    var _url = '/api/albums.json';
 //    var _url = 'https://api.myjson.com/bins/4yiht';
 //    var _url =  'https://itunes.apple.com/search?term='+'Kaiser Chiefs'+'&limit=2000'
@@ -24,7 +25,7 @@ angular.module('angular1FrothApp')
         $http({
           method: 'GET',
           responseType: 'json',
-          url: _url
+          url: _urlList
         }).success(function(data){
           deferred.resolve(data);
         }).error(function(){
@@ -32,10 +33,18 @@ angular.module('angular1FrothApp')
         });
         return deferred.promise;
       },
-      getAlbum: function(id) {
-        return this.getData().then(function(data){
-          return data.find(function(albums){return albums.Catalogue===id;});
+      getTracks: function(id) {
+        var deferred = $q.defer();
+        $http({
+          method: 'GET',
+          responseType: 'json',
+          url: _urlTrax + id
+        }).success(function(data){
+          deferred.resolve(data);
+        }).error(function(){
+          deferred.reject('There was an error');
         });
+        return deferred.promise;
       }
     };
   });
