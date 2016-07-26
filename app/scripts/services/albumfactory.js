@@ -12,7 +12,9 @@ angular.module('angular1FrothApp')
     // Service logic
     // ...
 
-    var _url = '/api/albums.json';
+    var _url = 'http://frothmusic.co.uk/frothmusic/ws.php?set=all';
+//    var _url = '/api/albums.json';
+//    var _url = 'https://api.myjson.com/bins/4yiht';
 //    var _url =  'https://itunes.apple.com/search?term='+'Kaiser Chiefs'+'&limit=2000'
 //    var _url =  'https://api.myjson.com/bins/vxc1'
 
