@@ -4,7 +4,10 @@ angular.module('angular1FrothApp')
 	.controller('DetailCtrl', function ($scope, $routeParams, albumFactory) {
 		$scope.passedId = $routeParams.albumId;
 
-		albumFactory.getAlbum($routeParams.albumId).then(function(data){
-			$scope.album = data;
+		albumFactory.getTracks($routeParams.albumId).then(function(data){
+			console.dir(data);
+			$scope.albumTitle = data[0].Album;
+			$scope.albumYear = data[0].Year;
+			$scope.albumTracks = data;
 		});
 	});

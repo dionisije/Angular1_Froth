@@ -2,10 +2,19 @@
 
 <div class="panel panel-info">
  	<div class="panel-heading">
- 		<h3 class="panel-title">{{album.Catalogue}}</h3>
+ 		<h3 class="panel-title">{{albumTitle}} ({{albumYear}})</h3>
  	</div>
- 	<div class="panel-body">
-		{{album.Album}} was released in {{album.Year}}.
+ 	<div class="table-responsive">
+		<table class="table table-condensed table-striped">
+			<tbody>
+				<tr ng-repeat="track in albumTracks">
+					<td>{{track.Track}}</td>
+					<td>{{track.Artist}}</td>
+					<td>{{track.Name}}</td>
+					<td>{{track.Time | secondsToDate | date: 'm:ss'}}</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>
 
